@@ -1,13 +1,15 @@
-# Japan Vacation Test
+# Joe Aman — Public Pages
 
-Astro site for publishing Paper-generated visual boards to Cloudflare Pages.
+Astro site for publishing Paper-generated visual boards and other public
+pages to Cloudflare Pages.
 
 Live site:
-https://japan-vacation-test.pages.dev/
+https://joe-aman-public.pages.dev/
 
 ## Workflow
 
-Use this flow when turning a Paper board into a hosted page.
+Use this flow when turning a Paper board (or any one-off page) into a hosted
+page.
 
 1. Export or inspect the Paper board.
    - Prefer real HTML/CSS when the board should stay responsive, selectable, or interactive.
@@ -22,9 +24,8 @@ Use this flow when turning a Paper board into a hosted page.
    - Reference them with root-relative URLs like `/assets/example.webp`.
    - Paper-hosted image URLs can be used for tests, but local assets are more durable for long-term hosting.
 
-4. Choose the default homepage behavior.
-   - The current homepage redirects to `/japan-vacation-2026/`.
-   - Update `public/_redirects` when a different board should become the default page.
+4. Add the page to the homepage list.
+   - `src/pages/index.astro` is a landing page linking every published page — add a card for the new page.
 
 5. Verify locally.
 
@@ -38,7 +39,7 @@ Use this flow when turning a Paper board into a hosted page.
 
    ```sh
    git add .
-   git commit -m "Add new Paper visual"
+   git commit -m "Add new page"
    git push
    ```
 
@@ -50,8 +51,9 @@ Use this flow when turning a Paper board into a hosted page.
 
 ## Current Routes
 
-- `/` redirects to `/japan-vacation-2026/`
-- `/japan-vacation-2026/` displays the Japan Vacation 2026 board
+- `/` — landing page listing all published pages
+- `/japan-vacation-2026/` — Japan Vacation 2026 board
+- `/i-love-melisa-lim/` — I Love Melisa Lim heart
 
 ## Customizing Pages
 
@@ -62,16 +64,6 @@ For richer behavior, use Astro islands:
 - Add vanilla JavaScript for simple click behavior, toggles, modals, filters, or scroll effects.
 - Add a framework integration like React when a section needs complex state, reusable UI controls, or animation libraries.
 - Keep Paper-derived visuals as presentational Astro components, then layer interactivity around them.
-
-Good candidates for Astro-side enhancements:
-
-- Clickable itinerary cards
-- Expand/collapse day details
-- Image lightboxes
-- Route-map hotspots
-- Smooth entrance animations
-- Mobile-specific controls
-- Data-driven rendering from a JSON itinerary file
 
 ## Node
 
