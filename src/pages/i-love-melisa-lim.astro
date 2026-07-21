@@ -1,0 +1,73 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>I Love Melisa Lim</title>
+		<style>
+			html, body {
+				margin: 0;
+				height: 100%;
+				background: #ffffff;
+			}
+			main {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+			.heart {
+				position: relative;
+				width: min(70vw, 420px);
+				aspect-ratio: 1 / 0.9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.heart::before,
+			.heart::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				width: 52%;
+				height: 80%;
+				background: #ff5c8a;
+				border-radius: 50% 50% 0 0;
+			}
+			.heart::before {
+				left: 50%;
+				transform: rotate(-45deg);
+				transform-origin: 0 100%;
+			}
+			.heart::after {
+				left: 0;
+				transform: rotate(45deg);
+				transform-origin: 100% 100%;
+			}
+			.heart span {
+				position: relative;
+				z-index: 1;
+				transform: translateY(-12%);
+				font-family: system-ui, sans-serif;
+				font-weight: 700;
+				font-size: clamp(1rem, 4vw, 1.6rem);
+				color: #ffffff;
+				text-align: center;
+				padding: 0 1.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="heart">
+				<span>I Love Melisa Lim</span>
+			</div>
+		</main>
+	</body>
+</html>
